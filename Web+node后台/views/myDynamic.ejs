@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/index/css/nav.css">
+    <link rel="stylesheet" href="/index/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/index/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dynamic/base.css">
+    <link rel="stylesheet" href="/dynamic/dynamic.css">
+    <script src="/javascripts/jquery-3.1.0.min.js"> </script>
+    <script src="/dynamic/comment.js"> </script>
+    <title>我的动态</title>
+    <link type="text/css" rel="stylesheet" href="/showBox/jquery.alertable.css" />
+    <script type="text/javascript" src="/showBox/jquery.alertable.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse" style="background-color: white">
+    <div class="navbar-header">
+        <!-- Button for smallest screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/">
+            <img src="/index/images/logo.png" alt="template"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right mainNav ">
+            <li class="c1 "><a href="/">首页</a></li>
+            <li class="c2 "><a href="/users/Dynamic">动态</a></li>
+            <li class="c3 "><a href="/users/appIntroduce">app介绍</a></li>
+            <li class="c4 "><a href="/users/Cooperation">加盟合作</a></li>
+            <li class="c5 "><a href="/users/ServiceHelp">服务帮助</a></li>
+            <li class="c6 " id="Info"></li>
+        </ul>
+    </div>
+    <!--/.nav-collapse -->
+</div>
+<!-- /.navbar -->
+<main>
+    <div class="container">
+        <aside>
+            <ul>
+                <li class="userPic"><img src="/upload/<%= person[0].userPic %>"
+                                         onerror="this.src='/images/1.png'">
+                </li>
+                <a href="/users/Dynamic">           <li class="a0">班级动态 </li></a>
+                <a href="/users/userInformation">   <li class="a0">个人中心</li></a>
+                <a href="/users/teacherDynamic">    <li class="a0">老师动态</li></a>
+                <a href="/users/mydynamic">         <li class="a0  a1">我的动态</li></a>
+            </ul>
+        </aside>
+
+        <section>
+            <header>
+                <form method='post' action='javascript:;' role="form" id="frmUploadFile" >
+                    <div class="inseartDynamic0" id="inseartDynamic0">
+                        <textarea   class="text1" name="text1" id="text1" placeholder="说点什么吧"></textarea>
+                    </div>
+                    <div class="inseartDynamic" id="inseartDynamic">
+                        <input type="file" name="files" id="myfile" class="file0" multiple="multiple"/>
+                        <br>
+                        <button class="img1" onClick="uploadFile()" id="img1" ></button>
+                        <img src="/dynamic/addPic.png" class="uploadFile" id="img2">
+                        <div class="help-inline" id="spanMessage"></div>
+                    </div>
+                </form>
+            </header>
+
+            <% if(users[0].length > 0){ %>
+            <!--<form style="width: 95%;border: 5px solid white">-->
+            <% for(var i = 0;i < users[0].length;i++) { %>
+            <div class="dynamic">
+                <div class="dynamic-top">
+                    <div class="userPics">
+                        <!--头像位置-->
+                        <img src="/upload/<%= users[0][i].userPic %>" onerror="this.src='/images/1.png'">
+                    </div>
+                    <div class="users">
+                        <!--昵称位置-->
+                        <b class="userNickName">
+                            <%= users[0][i].userNickName %>
+                        </b>
+                        <!--显示时间的位置-->
+                        <b class="dynamicDateTime">
+                            <%= users[0][i].dynamicDateTime %>
+                        </b>
+                    </div>
+                </div>
+                <!--显示动态文字内容的位置-->
+                <div class="dynamicContent"><%= users[0][i].dynamicContent %>
+                </div>
+
+                <!--显示图片的位置-->
+                <div class="dynamicPic">
+                    <% if(users[0][i].dynamicPics != null){ %>
+                    <% var arr = users[0][i].dynamicPics.split(",") %>
+                    <% for(var t = 0;t < arr.length;t++){ %>
+                    <% if(arr[t].length == 40) { %>
+                    <img src='/upload/<%= arr[t] %>' onerror='this.src=""' alt="">
+                    <% } %>
+                    <% } %>
+
+                    <% } %>
+                </div>
+                <!--点赞-->
+                <div class="dynamic-bottom">
+                    <div>
+                        <!--<input type="button" id="search" class="comment2" >-->
+                        <form action="/users/comment2" method="post">
+                            <input style="display: none" type="text" name="dynamicId" id="dynamicId" value="<%=users[0][i].dynamicId%>" readonly>
+                            <input type="submit" value="" class="comment2">
+                        </form>
+                       <a style="margin-left: 480px;line-height: 50px;font-size: 20px" href="/users/deletedynamic?dynamicId=<%=users[0][i].dynamicId%>" id="delete" onclick="return confirm('请确定要删除此动态吗？')">删除</a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+            <% } %>
+            <div class="page">
+                <div>
+                    <!--计算总共有页pageNumber-->
+                    <%
+                    var totalPageNumber;//总共有页
+                    var totalCount = totalCount[0].TotalCount;
+                    if (totalCount % pageSize == 0) {
+                        totalPageNumber = totalCount / 5;
+                    } else {
+                        totalPageNumber = parseInt(totalCount / 5) + 1;
+                    }
+                    %>
+                    <!--*************分页***************-->
+                    总共<%= totalCount %>条, 第<%= page %>页/共<%= totalPageNumber %>页 &nbsp;&nbsp;&nbsp;
+
+                    <!-- 对上一页下一页做一个处理，防止越界 if  else  -->
+                    <%
+                    if(parseInt(page) > 1){
+                    %>
+                    <!--上一页-->
+                    <a href="Dynamic?page=1">首页</a>
+                    <a href="Dynamic?page=<%= page - 1 %>"> 上一页</a>
+                    <%
+                    } else
+                    {
+                    %>
+
+                    首页&nbsp; 上一页
+                    <%
+                    }
+                    %>
+                    <%
+                    if(parseInt(page) < totalPageNumber){
+                    %>
+                    <a href="Dynamic?page=<%= parseInt(page) + 1 %>"> 下一页</a>
+                    <a href="Dynamic?page=<%= totalPageNumber %>"> 末页</a>
+                    <%
+                    }
+                    else
+                    {
+                    %>
+                    下一页&nbsp; 末页&nbsp;
+                    <%
+                    }
+                    %>
+                </div>
+                <div>
+                    <form action="Dynamic">
+                        跳转第 <input style="width: 20px;height: 25px" type="text" value="<%= page %>" name="page">页 <input
+                                type="submit" text="跳转">
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 宝贝家园项目小组 粤ICP备xxxxxxxxx号</p>
+</footer>
+
+<script type="text/javascript">
+    $(function() {
+        // Standard confirm
+        $('.confirm-demo').on('click', function() {
+            $.alertable.confirm('你确定要删除吗?').then(function() {
+                $.alertable.alert('删除成功');
+            }, function() {
+                console.log('Cancel');
+            });
+        });
+    });
+</script>
+
+<script src="/dynamic/dynamic.js"> </script>
+<script type="text/javascript" src="/index/js/nav.js"></script>
+</body>
+</html>

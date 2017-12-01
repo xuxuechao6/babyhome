@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>忘记密码</title>
+</head>
+<script src="/index/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/index/css/nav.css">
+<link rel="stylesheet" href="/index/css/bootstrap-theme.css">
+<link rel="stylesheet" href="/index/css/bootstrap.min.css">
+<script type="text/javascript" src="/index/js/nav.js"></script>
+<body>
+<div class="navbar navbar-inverse" style="background-color: #fff;z-index: 100;">
+    <div class="navbar-header">
+        <!-- Button for smallest screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/">
+            <img src="/index/images/logo.png" alt="template"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right mainNav ">
+            <li class="c1 "><a href="/">首页</a></li>
+            <li class="c2 "><a href="/users/Dynamic">动态</a></li>
+            <li class="c3 "><a href="/users/appIntroduce">app介绍</a></li>
+            <li class="c4 "><a href="/users/Cooperation">加盟合作</a></li>
+            <li class="c5 "><a href="/users/ServiceHelp">服务帮助</a></li>
+            <li class="c6 " id="Info"></li>
+        </ul>
+    </div>
+</div>
+<!--/.nav-collapse -->
+  <div class="content">
+   <div class="web-width">
+     <div class="for-liucheng">
+      <div class="liulist for-cur"></div>
+      <div class="liulist for-cur"></div>
+      <div class="liulist for-cur"></div>
+      <div class="liulist"></div>
+      <div class="liutextbox">
+       <div class="liutext for-cur"><em>1</em><br /><strong>填写账户名</strong></div>
+       <div class="liutext for-cur"><em>2</em><br /><strong>验证身份</strong></div>
+       <div class="liutext for-cur"><em>3</em><br /><strong>设置新密码</strong></div>
+       <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
+      </div>
+     </div><!--for-liucheng/-->
+     <form action="/users/forgetPwd3" method="post" class="forget-pwd">
+       <dl>
+        <dt>手机号：</dt>
+        <dd><input type="text" name="userPhone" value="<%=_userPhone%>" readonly /></dd>
+           <%=Msg%>
+        <div class="clears"></div>
+       </dl> 
+       <dl>
+        <dt>新密码：</dt>
+        <dd><input type="password" name="userPassword"/></dd>
+        <div class="clears"></div>
+       </dl> 
+       <dl>
+        <dt>确认密码：</dt>
+        <dd><input type="password" /></dd>
+        <div class="clears"></div>
+       </dl> 
+       <div class="subtijiao"><input type="submit" value="提交" /></div> 
+      </form><!--forget-pwd/-->
+   </div><!--web-width/-->
+  </div><!--content/-->
+  <footer style="margin: 20px 0 ">
+      <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 宝贝家园项目小组 粤ICP备xxxxxxxx号</p>
+  </footer>
+</body>
+<link  href="/forgetPwd/jquery.idcode.css" rel="stylesheet" />
+<link rel="stylesheet" href="/forgetPwd/forgetpwd.css">
+</html>

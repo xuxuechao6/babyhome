@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+    color: #fff;
+    background: #fff
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+/*初始化完毕 样式正式开始*/
+.section1 {
+    width: 100%;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    background: -webkit-linear-gradient(#56abe4, #5cd3e4);
+    background: -o-linear-gradient(#56abe4, #5cd3e4);
+    background: -moz-linear-gradient(#56abe4, #5cd3e4);
+    background: linear-gradient(#56abe4, #5cd3e4);
+}
+
+section #header1 {
+    display: inline-block;
+    clear: both;
+    width: 80%;
+    text-align: center;
+}
+
+section #header1 p {
+    text-indent: 2cm;
+}
+.top {
+    width: 100%;
+    height: 50px;
+    background-color: #60bdde;
+}
+
+.top-content {
+    display: inline-block;
+    list-style: none;
+    width: 40%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#top-content1 {
+    background-color: #f7f7f7;
+}
+
+#top-content2 {
+    background-color: #60bdde;
+}
+
+@media screen and (max-width: 350px ) {
+    .top {
+        width: 350px;
+        height: 50px;
+        background-color: #60bdde;
+    }
+
+}
+/*table切换面板头部样式结束*/
+
+/*table面板样式开始*/
+.top .block1, .top .block2 {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: -16px;
+    padding: 30px 50px 0 50px;
+    background-color: #f7f7f7;
+}
+
+/*显示table1 设置table2为隐藏*/
+.top .block2 {
+    display: none;
+}
+
+/*table内容的样式*/
+.top .block1 .checkbox {
+    padding: 50px 0;
+    width: 100%;
+    text-align: center
+}
+
+.top .block1 .checkbox .content1 {
+    background-color: #FFFFFF;
+    width: 260px;
+    height: 350px;
+    padding: 20px;
+    margin-left: 10%;
+    display: inline-block;
+
+}
+
+.parent img, .teacher img {
+    width: 150px;
+    height: 200px;
+    margin-bottom: 20px;
+    margin-top: 5px
+}
+
+/*table2的样式*/
+.panel:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    -webkit-transform: translate3d(0, -2px, 0);
+    -moz-transform: translate3d(0, -2px, 0);
+    -o-transform: translate3d(0, -2px, 0);
+    -ms-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0)
+}
+.panel a:hover{
+    text-decoration: none;
+}
+.tab-pane{
+    margin-top: 50px;
+}
+.panel2{
+    width: 25%;
+    height: auto;
+    float: left;
+    margin-left: 5%;
+}
+.panel-heading {
+    background-color: #2babe2;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+
+}
+.panel-heading p{
+    text-align: center;
+    line-height: 40px;
+}
+#faq31, #faq32, #faq33 {
+    background-color: #ffffff;
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 1000px ){
+    .panel2{
+        width: 300px;
+        height: auto;
+        float: none;
+    }
+    .panel-heading {
+        background-color: #2babe2;
+        text-align: center;
+        width: 100%;
+        height: 60px;
+        border-radius: 5px;
+
+    }
+}
+/*弹出内容样式*/
+.cd-popup,.cd-popup1 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    z-index: 2;
+}
+
+.cd-popup.is-visible ,.cd-popup1.is-visible1{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+
+.cd-popup-container,.cd-popup-container1 {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    background: #FFF;
+    border-radius: .4rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-backface-visibility: hidden;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.cd-popup0 .direction {
+    background: -webkit-linear-gradient(top, #56abe4, #5cd3e4);
+    background: -moz-linear-gradient(top, #56abe4, #5cd3e4);
+    background: -o-linear-gradient(top, #56abe4, #5cd3e4);
+    background: linear-gradient(to bottom, #56abe4, #5cd3e4);
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+    margin-bottom: 20px;
+}
+.cd-popup0 .content-text-mid h3{
+    margin: -20px 0;
+}
+.cd-popup0 .content-text-mid img{
+    margin-left: -10%;
+    width: 100%;
+}
+.cd-popup0 .content-text-mid p{
+    text-indent: 2em;
+    text-align: left;
+}
+.cd-popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+    width: auto;
+    height: 1.25rem;
+    display: block;
+    font-size: 16px;
+}
+.cd-popup-close:hover{
+    text-decoration: none;
+}
+
+.is-visible .cd-popup-container ,.is-visible1 .cd-popup-container1{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+.cd-popup0 .content-text-mid{
+    margin: 0 auto;
+    padding: 20px 30px;
+    text-align: center;
+}
+footer{
+    position: relative;
+}
+.footer2{
+    position: relative;
+    bottom: -200px;
+}
+footer p{
+    text-align: center;
+}

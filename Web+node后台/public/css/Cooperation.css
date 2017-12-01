@@ -1,0 +1,132 @@
+*{padding: 0;
+	margin: 0;}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+.section1,.section2,.section3,.section4,.section1Wrapper,.section2Wrapper,.section3Wrapper,.section4Wrapper{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.sectionWrapper {
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.section1, .section2, .section3, .section4, .section6 {
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+.section6 {
+	background: #56aaff;
+}
+.secitonbottombg {
+	width: auto;
+	text-align: center;
+	position: absolute;
+	bottom: 20%;
+	left: 0px;
+	z-index: 1;
+}
+.section1 .secitonbottombg {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.section6 .secitonbottombg a {
+	position: absolute;
+	left: 0;
+	bottom: 5%;
+	height: 15%;
+	width: 100%;
+	z-index: 99;
+}
+.section6 .secitonbottombg a img {
+	height: 100%;
+	width: auto;
+}
+/*回到顶部*/
+.arrow_down {
+	position: absolute;
+	bottom: 10%;
+	left: 49%;
+	z-index: 100;
+}
+#arrow_up {
+	display: none;
+	position: fixed;
+	bottom: 100px;
+	right: 50px;
+	width: 90px;
+	height: 90px;
+	z-index: 60;
+	_position: absolute;
+}
+
+#join {
+	margin-top: 80px;
+}
+.partner-content{
+	margin-top: 20px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.joinusfont{
+	font-size:16px;
+	color:#2d5261;
+	margin-bottom:5px;
+	margin-left: 1px
+}
+.form-control{
+	height:48px;
+	width:90%;
+	margin-left: 1px
+}
+.form-group input,.form-group select{
+	border-radius: 5px;
+}
+.input1{
+	padding-left:0;
+}
+.btnfooter{
+	margin-top:3%;
+	margin-bottom:3%;
+}
+.btnfooter2{
+	margin-left: 39.4%;
+}
+#submit{
+	background-color:#ffffff;
+	font-weight:normal;
+	border:1px #56abe4 solid;
+	width: 100px ;
+	color: black;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px 0;
+}
+@media screen and (min-width: 370px ) and (max-width: 540px ){
+	.form-control,.joinusfont{
+		margin-left: 10%;
+	}
+}
+@media screen and (min-width: 550px ) and (max-width: 765px ){
+	.form-control,.joinusfont{
+		margin-left: 1%;
+	}
+}
+@media screen and (min-width: 1050px )and (max-width: 1366px ) {
+	#submit{
+		margin-left: 5%;
+	}
+}
+@media screen and (min-width: 780px ) and (max-width: 1050px ){
+	#submit{
+		margin-left:2%;
+	}
+}

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="/javascripts/jquery-3.1.0.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/serverHelp/css/ServiceHelp.css">
+
+    <script type="text/javascript" src="/index/js/nav.js"></script>
+    <link rel="stylesheet" href="/index/css/nav.css">
+    <link rel="stylesheet" href="/index/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/index/css/bootstrap.min.css">
+
+    <script>
+        $(document).ready(function () {
+            $("#top-content2").click(function () {
+                $("#top-content2").css({"background-color": "#f7f7f7"});
+                $("#top-content1").css({"background-color": "#60bdde"});
+                $("#block1").hide(0);
+                $("#block2").show(0);
+            })
+            $("#top-content1").click(function () {
+                $("#top-content2").css({"background-color": " #60bdde"});
+                $("#top-content1").css({"background-color": "#f7f7f7"});
+                $("#block2").hide(0);
+                $("#block1").show(0);
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="navbar navbar-inverse" style="background-color: white">
+    <div class="navbar-header">
+        <!-- Button for smallest screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/">
+            <img src="/index/images/logo.png" alt="template"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right mainNav ">
+            <li class="c1 "><a href="/">首页</a></li>
+            <li class="c2 "><a href="/users/Dynamic">动态</a></li>
+            <li class="c3 "><a href="/users/appIntroduce">app介绍</a></li>
+            <li class="c4 "><a href="/users/Cooperation">加盟合作</a></li>
+            <li class="c5 "><a href="/users/ServiceHelp">服务帮助</a></li>
+            <li class="c6 " id="Info"></li>
+        </ul>
+    </div>
+    <!--/.nav-collapse -->
+</div>
+<!-- /.navbar -->
+<section class="section1">
+    <div id="header1">
+        <h2>您的微笑，是我们前进的动力</h2>
+        <p>您的每一个宝贵意见，我们都会认真对待，</p>
+        <p>因为我们希望我们的产品能得到所有用户的喜欢。</p>
+        <p>您的微笑，是对我们服务的肯定，因为您的微笑，</p>
+        <p>我们才知道我们的所有努力是值得的。</p>
+    </div>
+</section>
+<div id="container">
+    <div class="top">
+        <ul class="top1">
+            <li class="top-content" id="top-content1" style=" margin-left: 10% ;cursor:pointer;">
+                操作指引
+            </li>
+            <li class="top-content" id="top-content2" style=" cursor:pointer;">
+                常见问题
+            </li>
+        </ul>
+        <div class="block1" id="block1">
+            <div class="checkbox">
+                <a href="" class="cd-popup-trigger0">
+                    <div class="content1 parent panel ">
+                        <p>家长版</p>
+                        <img class="baby-img" src="/images/ttbg.png">
+                        <p>宝贝家园家长版操作指引</p>
+                    </div>
+                </a>
+                <a href="" class="cd-popup-trigger1">
+                    <div class="content1 teacher panel">
+                        <p>园丁版</p>
+                        <img class="baby-img" src="/images/ttbg.png">
+                        <p>宝贝园丁版操作指引</p>
+                    </div>
+                </a>
+            </div>
+
+            <footer >
+                <p>Copyright © 2016 宝贝家园项目小组 粤ICP备xxxxxxxx号</p>
+            </footer>
+        </div>
+        <div class="block2" id="block2">
+            <div class="tab-pane" id="feature-2">
+                <div class="row contents hidden-sm">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="panel">
+                            <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle collapsed"
+                               href="#faq31">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+
+                                        <i class="fa fa-plus-square"></i>
+                                        <p class="job-name text-center">园丁版常见问题解答</p>
+
+                                </h4>
+                            </div></a>
+                            <div class="panel-collapse collapse" id="faq31">
+                                <div class="panel-body">
+                                    <h4 class="subtitle">Q:幼儿考勤管理</h4>
+                                    <ul>
+                                        <li>
+                                            幼儿考勤是一个专门为园务管理工作服务的窗口，可以帮助老师更便捷的记录幼儿签到，一键提交，系统自动统计当日幼儿考勤情况；通过日期查看当日未到校学生名单，也可以补签，使幼儿考勤管理变得更高效。
+                                        </li>
+                                    </ul>
+                                    <h4 class="subtitle">园长信箱</h4>
+                                    <ul>
+                                        <li>园长信箱是掌心宝贝提供给老师的一个向园长反馈问题的平台，老师可以选择匿名或者实名发送。</li>
+                                    </ul>
+
+                                    <h4 class="subtitle">园长周计划表</h4>
+                                    <ul>
+                                        <li>
+                                            周计划表是掌心宝贝提供给园长了解老师周计划安排的信息窗口，园长可通过筛选班级，查看各个班级的周计划日程安排，便于督促教师管理教学，提高学校科学化教学水平。
+                                        </li>
+                                    </ul>
+                                    <h4 class="subtitle">发布校务通知</h4>
+                                    <ul>
+                                        <li>在掌心宝贝APP中，打开【班级通知】页面，点击右上角添加图标，填写通知标题和内容提交即可。发布成功的通知，老师均可以查看。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                        <div class="panel">
+                            <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle collapsed"
+                               href="#faq32">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+
+                                        <i class="fa fa-plus-square"></i>
+                                        <p class="job-name text-center">家长版常见问题</p>
+
+                                </h4>
+                            </div></a>
+                            <div class="panel-collapse collapse" id="faq32">
+                                <div class="panel-body">
+                                    <h4 class="subtitle">帐号及密码如何获取</h4>
+                                    <ul>
+
+                                        <li>家长账户使用手机号码或老师提供的用户ID登陆，默认的初始密码是123456.家长的手机号码必须在掌心宝贝后台录入，方可成功登陆。</li>
+
+                                    </ul>
+                                    <h4 class="subtitle">忘记登录密码</h4>
+                                    <ul>
+
+                                        <li>忘记登录密码请联络园所老师，老师可以帮助用户重新设置密码，也可以通过添加QQ群291927444联系工作人员进行重置。</li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">邀请家人</h4>
+                                    <ul>
+
+                                        <li>
+                                            打开掌心宝贝【我】页面，点选【邀请家人】，找出没被邀请的用户，选择【邀请】，输入被邀请用户的手机号码，这时被邀请用户会收到掌心宝贝发来的一条验证码短信，在有效时间内，正确输入验证码，点击下一步操作，为被邀请用户设置初始密码，确认提交。被邀请用户信息点亮，家人邀请成功。
+                                        </li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">家长观看视频时不流畅，怎么办？</h4>
+                                    <ul>
+
+                                        <li>请确认幼儿园的上传带宽是否满足掌心宝贝服务器的最低上传带宽要求。若远低于带宽要求，请增加带宽；若接近最低上传带宽，请降低码流以保证视频的流畅度。
+                                        </li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">用掌心宝贝手机端观看视频时耗费流量多么？</h4>
+                                    <ul>
+
+                                        <li>视频播放时大概每秒使用15KB的流量。为了节省流量以及有一个更好的观看效果，建议在有WIFI环境下观看。</li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">进入手机端点击视频闪退？</h4>
+                                    <ul>
+
+                                        <li>这是因为部分手机内存不足造成，建议清除手机的缓存后，重新打开软件。</li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">宝贝在线无法观看视频或者点击不了宝贝在线模块？</h4>
+                                    <ul>
+
+                                        <li>这是因为家长未订购视频服务。请联系幼儿园询问开通视频服务或者视频服务已到期。</li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">【在线视频】中的内容无法播放</h4>
+                                    <ul>
+
+                                        <li>
+                                            查看网络连接是否正常。或者退出客户端，重新登录再试试。如果不是以上问题，请添加QQ群：291927444，发消息告诉我们的管理员，帮助您解答。注：由于【在线视频】内容大多都是音频或视频，会消耗流量些，请尽量在WIFI环境下使用。
+                                        </li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">家长一般可以看到几个视频？</h4>
+                                    <ul>
+
+                                        <li>家长一般可以观看宝贝所在班级的视频或者带寝室的教室；个别学校的公共区域。</li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">家长登录APP提示用户或密码错误？</h4>
+                                    <ul>
+
+                                        <li>首先先确定下载的掌心宝贝是否是家长版的版本；确认无误后还出现该提示；可以选择忘记密码；通过手机验证修改密码；然后进行登录。</li>
+
+                                    </ul>
+                                    <h4 class="subtitle">点击宝贝在线提示“用户名或密码错误”？</h4>
+                                    <ul>
+
+                                        <li>请联系幼儿园；进行重置宝贝在线密码。</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                        <div class="panel">
+                            <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle collapsed"
+                               href="#faq33">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+
+                                        <i class="fa fa-plus-square"></i>
+                                        <p class="job-name text-center">加盟代理商</p>
+
+                                </h4>
+                            </div></a>
+                            <div class="panel-collapse collapse" id="faq33">
+                                <div class="panel-body">
+                                    <h4 class="subtitle">如何根据家长缴费情况设置视频观看时间？</h4>
+                                    <ul>
+
+                                        <li>根据家长缴费情况，在录入家长信息的时候可以设置视频有效期；到期后可以在宝贝在线设置观看视频的日期。</li>
+
+                                    </ul>
+                                    <h4 class="subtitle">家长观看视频时不流畅，怎么办？</h4>
+                                    <ul>
+
+                                        <li>请确认幼儿园的上传带宽是否满足掌心宝贝服务器的最低上传带宽要求。若远低于带宽要求，请增加带宽；若接近最低上传带宽，请降低码流以保证视频的流畅度。
+                                        </li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">如何添加考勤设备？</h4>
+                                    <ul>
+
+                                        <li>请登录掌心宝贝管理平台，在考勤管理中绑定考勤机id号；然后重启下考勤机。用读卡器录入考勤卡的卡片信息后，即可刷卡使用。</li>
+
+                                    </ul>
+
+                                    <h4 class="subtitle">下载安视达云监控系统；提示：无法创建D3D9设备（createDevice）请检查安装是否完成？</h4>
+                                    <ul>
+
+                                        <li>安装directx可以解决；Microsoft DirectX 是这样一组技术：它们旨在使基于Windows
+                                            的计算机成为运行和显示具有丰富多媒体元素（例如全色图形、视频、3D动画和丰富音频）的应用程序的理想平台。DirectX
+                                            包括安全和性能更新程序，以及许多涵盖所有技术的新功能。应用程序可以通过使用DirectX API 来访问这些新功能；或者更新显卡驱动。
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer2">
+                <p>Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+            </footer>
+        </div>
+    </div>
+</div>
+<div class="cd-popup cd-popup0">
+    <div class="cd-popup-container" style="height: auto;padding-bottom: 0">
+        <div class="direction">
+            <h2>宝贝家园家长版操作说明书</h2>
+        </div>
+        <div class="content-text-mid">
+            <h3>一、宝贝家园如何下载安装</h3>
+            <img src="/images/t7.png">
+            <p>
+                苹果用户在主屏幕上找到“App Store”点击并打开，按提示输入您App
+                Store的帐号和密码，选择对应版本进行下载和安装。安卓用户在应用商店搜索“掌心宝贝”获取我们的软件选择对应版本进行下载,下载完成后，执行安装操作即可。如果您有掌心宝贝公众号云领天下二维码，也可以通过QQ或者微信扫一扫方式，下载和安装客户端。
+            </p>
+        </div>
+        <div class="content-text-mid">
+            <h3>二、登陆系统</h3>
+            <img src="/images/t7.png">
+            <p>安装成功后，可以点击下面“掌心宝贝家长版图标，启动软件：进入登录页面后，输入您的“手机号码”和“帐号密码”，点击“登录”按钮即可登录系统。</p>
+        </div>
+        <div class="content-text-mid">
+            <h3>三、进入主界面</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;登录成功进入主界面，分为五大板块，点击相应图标，可以进入各个子版块。
+            </p>
+
+        </div>
+        <div class="content-text-mid">
+            <h3>四、如何查看校园新闻？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击校园新闻图标，可进入新闻标题与简介列表页面。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>五、如何查看班级通知？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击班级通知图标，可进入班级通知模块。点击右上角未读人数，可查看通知未读人员名单。
+            </p>
+
+        </div>
+
+
+        <div class="content-text-mid">
+            <h3>六、如何查看宝宝签到？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击宝贝考勤图标，可进入考勤页面。此页面中可以查看最近一星期的考勤情况，点击星期日期，下方会显示选择日期的打卡详细列表，包括打卡时间，与拍照照片，点击拍照照片可以显示大图。二维码扫码打卡的，不显示图片。点击查询历史，可查看宝贝详细的考勤记录。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>七、如何查看宝贝饮食？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击宝贝饮食图标，可进入饮食页面。此页面中可以查看最近一周的饮食情况，点击相应的星期日期，下方会显示详细的饮食信息。 </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>八、如何查看宝贝课程表？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击课程表图标，进入课程表页面。此页面显示最近一周的课程情况。点击相应的星期日期，下方会显示详细的课程信息。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>九、如何查看班级作业？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                在幼儿园中点击班级作业图标，进入班级作业页面。点击班级作业标题，可以查看作业的详细信息。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十、如何查看班级活动？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                在幼儿园中点击班级活动图标，进入班级活动页面。点击班级活动的标题，可以查看班级活动的详细信息。点击右上角的按钮，可查看活动报名的详细信息。
+
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十一、如何查看宝贝在校情况？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                点击宝贝在线图标，进入宝贝在线页面。即将视频到期的用户，图标上有时间提醒。在设置观看的时间段，点击视频中的图标可在线观看视频，可进行放大查看。点击手机的返回按钮，退出视频。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十二、儿童乐园可以做什么？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                在幼儿园中点击儿童乐园图标，进入儿童乐园页面。页面显示的是精彩推荐以及热门儿歌，点击相对应的图标，进行在线观看。点击四个小正方形按钮，进入到另一个页面，贝瓦网和一些儿歌故事的分类，点击标题查看详细信息。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十三、如何查看消息留言？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                在幼儿园中点击留言图标，进入留言页面。点击右上角的按钮选择联系人，发送留言内容。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十四、如何发布动态？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                点击标签动态，进入动态页面。点击右上角的按钮，可选择照片和小视频。点击照片，选择发布的内容和班级，完成后点击右上角的按钮，发布动态。点击小视频，可录制30s以内的小视频。点击录制视频旁边的按钮，可查看历史视频列表。可对家长，老师和园长分类查看，在动态中可以点赞和回复以及删除。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十五、如何查看成长？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                点击标签成长，进入成长页面。成长顶部有最新，月两个按钮，点击相对应的按钮，查看详细的信息。点击最新按钮显示的是最近一次发布的动态，以及之前发布的信息。点击旁边的第一个图标，可以编辑和删除。点击第二个图标，分享到微信朋友圈，邮箱短信等。一天只能发布一条成长动态。点击月按钮，选择相对应的月份，查看当月的详细信息。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十六、如何进行幼儿辅导？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+
+            <p>
+                点击标签幼儿辅导，进入幼儿辅导页面。点击右上角入园时间进行设置，完成后可看到个性化的辅导内容。幼儿辅导页面显示的是前后七天的内容，点击相对应的时间，查看详细内容。入园前三天，入园后七天，这十天有个性化辅导，对于刚入园的孩子帮助其尽早适应学校生活。这十天以外，会有育儿知识，给家长提供参考。
+            </p>
+
+        </div>
+
+        <div class="content-text-mid">
+            <h3>十七、如何修改用户个人信息？</h3>
+            <div class="imgpart">
+                <img src="/images/t7.png">
+            </div>
+            <p>
+                点击标签我，进入个人用户页面。右上角有设置按钮，点击可查看相关信息。点击用户名字这一栏，可以更换头像，昵称和修改密码。点击邀请家人，输入有效的电话号码，即可实现邀请。点击添加接送人头像，可添加四个接送人头像。点击扫一扫打卡，对着打卡机进行二维码扫码，可进行宝贝考勤打卡。点击系统公告，可查看系统相关的信息。点击使用帮助，可看到相应的详细信息。点击意见反馈，进行反馈意见。点击退出登录，退出当前账户。
+            </p>
+        </div>
+        <a href="#0" class="cd-popup-close">关闭</a>
+    </div>
+</div>
+<div class="cd-popup1 cd-popup0" style="">
+    <div class="cd-popup-container1" style="height: auto;padding-bottom: 0">
+        <div class="direction">
+            <h2>宝贝家园园丁版操作说明书</h2>
+        </div>
+        <div class="modal-body">
+            <div class="content-text">
+                <div class="content-text-mid">
+                    <h3>一、宝贝家园如何下载安装</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;苹果用户在主屏幕上找到“App Store”点击并打开，按提示输入您App
+                        Store的帐号和密码，选择对应版本进行下载和安装。安卓用户在应用商店搜索“掌心宝贝”获取我们的软件选择对应版本进行下载,下载完成后，执行安装操作即可。如果您有掌心宝贝公众号云领天下二维码，也可以通过QQ或者微信扫一扫方式，下载和安装客户端。
+                    </p>
+
+                </div>
+                <div class="content-text-mid">
+                    <h3>二、登陆系统</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;安装成功后，可以点击下面“掌心宝贝园丁版”图标，启动软件：进入登录页面后，输入您的“手机号码”和“帐号密码”，点击“登录”按钮即可登录系统。
+                    </p>
+
+                </div>
+                <div class="content-text-mid">
+                    <h3>三、进入主界面</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;登录成功进入主界面，分为五大板块，点击相应图标，可以进入各个子版块。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>四、如何更新校园新闻？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击校园新闻图标，可进入新闻标题与简介列表页面。点击右上角编辑按钮，可以编辑校园新闻。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>五、如何编辑班级通知？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击班级通知图标，可进入班级通知模块。点击右上角编辑按钮，可以编辑班级通知。点击右上角未读人数，可查看通知未读人员名单。
+                    </p>
+
+                </div>
+
+
+                <div class="content-text-mid">
+                    <h3>六、如何查看宝宝签到考勤？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击宝宝签到图标，进入宝宝签到页面。顶部有班级按钮，选择相对应的班级，进行考勤。选择后，页面显示的是一个班的信息。点击宝宝相对应的名字，没有点到的宝宝就是未到状态，也可以选择全选按钮，没有到的宝宝点击相对应的名字，下方会显示未签到宝宝的名字，完成后点击提交按钮，确认提交。一天打卡两次及以上，最后一次打卡在下午一点钟以后，这样的是签到宝宝，否则就是未签到宝宝。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>七、如何编辑宝贝饮食情况？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击宝贝饮食图标，可进入饮食页面。此页面中可以编辑本周的饮食情况，点击星期日期，选择右上角的编辑按钮，添加完成后提交。 </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>八、如何编辑宝贝课程表？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中选择课程表图标，进入课程表页面。选择相对应的班级，进入该班级的页面。此页面中可以编辑最近一周的课程，点击星期日期，选择右上角的编辑按钮，完成后提交。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>九、如何布置班级作业？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击班级作业图标，进入班级作业页面。选择相对应的班级，进入该班级页面。点击右上角的编辑按钮，完成后点击提交。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十、如何发布班级活动？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击班级活动图标，进入班级活动页面。选择相对应的班级，进入该班级页面。点击右上角的编辑按钮，完成后点击提交。
+                        发布过的活动，点击标题后查看详细信息，右上角有按钮，点击查看活动报名的具体信息。
+
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十一、观看宝贝在线？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击宝贝在线图标，进入宝贝在线页面。即将视频到期的用户，图标上有时间提醒。在设置观看的时间段，点击视频中的图标可在线观看视频，可进行放大查看。点击左上角的返回按钮，退出视频。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十二、如何查看育儿知识？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;在幼儿园中点击育儿知识按钮，进入育儿知识页面。点击文章标题查看具体的内容。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十三、如何发送消息留言？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;点击留言图标，进入留言页面。点击右上角的按钮选择联系人，发送留言内容。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十四、如何查看教师考勤？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;点击教师考勤图标，可进入考勤页面。此页面中可以查看最近一星期的考勤情况，点击星期日期，下方会显示选择日期的打卡详细列表，包括打卡时间与拍照照片，点击拍照照片可以显示大图。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十五、如何发布动态？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;点击标签动态，进入动态页面。点击右上角的按钮，可选择照片和小视频。点击照片，选择发布的内容和班级，完成后点击右上角的按钮，发布动态。点击小视频，可录制30s以内的小视频。点击录制视频旁边的按钮，可查看历史视频列表。可对家长，老师和园长分类查看，在动态中可以点赞和回复以及删除。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十六、如何查看成长贡献？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;点击标签成长，进入成长页面。老师可以看到自己的小红花，经验值情况以及本月家长对自己的贡献排行榜。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十七、如何使用通讯录添加好友？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;点击标签通讯录，进入通讯录页面。通讯录顶部有家长，老师两个按钮，点击其中一个按钮，进入到该页面。家长和老师页面按二十四个大写字母排序，选择后点击号码旁边的电话，短信按钮，即可进行沟通交流。
+                    </p>
+
+                </div>
+
+                <div class="content-text-mid">
+                    <h3>十八、如何修改个人用户信息？</h3>
+                    <div class="imgpart">
+                        <img src="/images/t7.png">
+                    </div>
+
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;点击标签我，进入个人用户页面。右上角有设置按钮，点击可查看相关信息。点击用户名字这一栏，可以更换头像，昵称和修改密码。点击系统公告，可查看系统相关的信息。点击使用帮助，可看到这款软件相应的详细信息。点击意见反馈，进行反馈意见。点击退出登录，退出当前账户。
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <a href="#0" class="cd-popup-close">close</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    /*弹框JS内容*/
+    jQuery(document).ready(function ($) {
+        //打开窗口
+        $('.cd-popup-trigger0').on('click', function (event) {
+            event.preventDefault();
+            $('.cd-popup').addClass('is-visible');
+        });
+        //关闭窗口
+        $('.cd-popup').on('click', function (event) {
+            if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
+                event.preventDefault();
+                $(this).removeClass('is-visible');
+            }
+        });
+        //ESC关闭
+        $(document).keyup(function (event) {
+            if (event.which == '27') {
+                $('.cd-popup').removeClass('is-visible');
+            }
+        });
+        $('.cd-popup-trigger1').on('click', function (event) {
+            event.preventDefault();
+            $('.cd-popup1').addClass('is-visible1');
+            //$(".dialog-addquxiao").hide()
+        });
+        $('.cd-popup1').on('click', function (event) {
+            if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup1')) {
+                event.preventDefault();
+                $(this).removeClass('is-visible1');
+            }
+        });
+        $(document).keyup(function (event) {
+            if (event.which == '27') {
+                $('.cd-popup1').removeClass('is-visible1');
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+<link rel="stylesheet" href="/serverHelp/css/bootstrap.min.css">
+<!-- Bootstrap style -->
+</html>

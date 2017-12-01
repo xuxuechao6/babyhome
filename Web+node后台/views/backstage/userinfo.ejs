@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宝贝家园后台管理系统</title>
+    <link rel="stylesheet" href="/admin-css/users.css">
+</head>
+<body>
+<% include header.ejs%>
+<% if(users.length>0){%>
+<div class="content" >
+    <h2>用户信息</h2>
+    <div id="search">
+        <input type="text" id="userType" value="" style="margin-top: -17px">
+        <button id="searchto" style="background-position: left -2px top -2px;border: none;"></button>
+    </div>
+     <table id="tbUser">
+        <tr>
+            <th>用户账号</th>
+            <th>用户密码</th>
+            <th>用户昵称</th>
+            <th>用户性别</th>
+            <th>用户类型</th>
+            <th>用户出生日期</th>
+            <th>修改</th>
+            <th>删除</th>
+        </tr>
+        <% for(var i=0;i<users.length;i++) {%>
+        <tr >
+            <td> <%=users[i].userPhone%></td>
+            <td> <%=users[i].userPassword%></td>
+            <td> <%=users[i].userNickName%></td>
+            <td> <%=users[i].userSex%></td>
+            <td> <%=users[i].userType%></td>
+            <td> <%=users[i].userDate%></td>
+            <td> <a  href="/admin/updateUserinfo?userPhone=<%=users[i].userPhone%>" >修改</a></td>
+            <td> <a  href="/admin/deleteUserinfo?userPhone=<%=users[i].userPhone%>" >删除</a></td>
+        </tr>
+        <% }%>
+    </table>
+</div>
+<% }%>
+</body>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</html>
+<script>
+    $(document).ready(function () {
+        $("#searchto").click(function () {
+            //发送数据f
+            // ajax() 方法通过 HTTP 请求加载远程数据。
+            $.ajax({
+                type: "GET",
+                url: "searchUser",
+                data: {search: $("#userType").val()},
+                dataType: "text",
+                success: getData    //回调函数
+            });
+        });
+    });
+    function getData(result) {
+        var users = JSON.parse(result);  //字符串转 json对象；
+        console.log(users.length)
+        //循环插入的JQ代码：
+        var $table = $("#tbUser");
+        $table.html("");
+        $table.append(" <tr> <th>用户账号</th> <th>用户密码</th> <th>用户昵称</th> <th>用户性别</th> <th>用户类型</th> <th>用户出生日期</th> <th>修改</th> <th>删除</th> </tr>");
+        for (var i = 0; i < users.length; i++) {
+            $table.append("<tr>");
+            $table.append("<td>" + users[i].userPhone + "</td>");
+            $table.append("<td>" + users[i].userPassword + "</td>");
+            $table.append("<td>" + users[i].userNickName + "</td>");
+            $table.append("<td>" + users[i].userSex + "</td>");
+            $table.append("<td>" + users[i].userType + "</td>");
+            $table.append("<td>" + users[i].userDate + "</td>");
+            $table.append("<td>" + "<a  href='/admin/updateUserinfo?userPhone="+users[i].userPhone+"'>修改</a>" + "</td>");
+
+            $table.append("<td> <a  href='/admin/deleteUserinfo?userPhone="+users[i].userPhone+"' >删除</a>  </td>");
+            $table.append("</tr>");
+        }
+    }
+
+</script>

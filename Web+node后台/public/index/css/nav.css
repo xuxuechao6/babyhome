@@ -1,0 +1,123 @@
+
+/*导航栏样式*/
+.navbar-nav > li > a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400 !important;
+}
+.navbar-inverse .navbar-brand img {
+    width: 171px;
+}
+.navbar-inverse .navbar-nav > li.c1 a {
+    color: #F55;
+}
+.navbar-inverse .navbar-nav > li.c2 a {
+    color: #973CB6;
+}
+.navbar-inverse .navbar-nav > li.c3 a {
+    color: #5EC64D;
+}
+
+.navbar-inverse .navbar-nav > li.c4 a {
+    color: #29AAE2;
+}
+
+.navbar-inverse .navbar-nav > li.c5 a {
+    color: #FFC225;
+}
+/*颜色过渡*/
+.navbar-inverse .navbar-nav > li.c6 a {
+    border-radius: 10px;
+    animation: 4s colorChange infinite;
+}
+@keyframes colorChange{
+    0%{
+        background: #5ec44d;
+    }
+    50%{
+        background: #fe850e;
+    }
+    100%{
+        background: #5ec44d;
+    }
+}
+
+.navbar-inverse .navbar-nav > li.c1 a:hover, .navbar-inverse .navbar-nav > li.c1.active a {
+    color: #fff;
+    background: #F55;
+    border-radius: 10px;
+}
+
+.navbar-inverse .navbar-nav > li.c2 a:hover, .navbar-inverse .navbar-nav > li.c2.active a {
+    color: #fff;
+    background: #973CB6;
+    border-radius: 10px;
+}
+
+.navbar-inverse .navbar-nav > li.c3 a:hover, .navbar-inverse .navbar-nav > li.c3.active a {
+    color: #fff;
+    background: #5EC64D;
+    border-radius: 10px;
+}
+
+.navbar-inverse .navbar-nav > li.c4 a:hover, .navbar-inverse .navbar-nav > li.c4.active a {
+    color: #fff;
+    background: #29AAE2;
+    border-radius: 10px;
+}
+
+.navbar-inverse .navbar-nav > li.c5 a:hover, .navbar-inverse .navbar-nav > li.c5.active a {
+    color: #fff;
+    background: #FFC225;
+    border-radius: 10px;
+}
+
+.navbar-inverse .navbar-nav > li.c6 a:hover, .navbar-inverse .navbar-nav > li.c6.active a {
+    color: #fff;
+    background: #ED47C5;
+    border-radius: 10px;
+}
+
+.navbar-inverse {
+    /*background: #fefef9;*/
+    margin: 0 auto;
+    border: none;
+    background: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .active > a {
+    background: #3d84e6;
+    border-radius: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+    text-align: left;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #fff !important;
+    border-radius: 0;
+    background: #3d84e6;
+}
+/*导航栏的自适应*/
+@media (max-width: 768px) {
+    .navbar-collapse ul {
+        text-align: right;
+        margin-right: 0;
+    }
+    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+        font-size: 18px;
+    }
+    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+        text-align: center;
+    }
+}
+/*导航结束*/

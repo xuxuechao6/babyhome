@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/admin-css/common.css">
+</head>
+<body>
+<% include header.ejs%>
+<div class="userinfo-table" >
+    <h2>发布育儿资讯</h2>
+    <form action="/admin/commonJudge" method="post" class="basic-grey">
+        <label>
+            <span>新闻标题 :</span>
+            <input id="name" type="text" name="commonTitle" placeholder="Title" required />
+        </label>
+        <label>
+            <span>新闻内容 :</span>
+            <textarea id="message" name="commonContent" placeholder="Content" required></textarea>
+        </label>
+        <input type="submit" value="发布" style="width: 80px;height: 40px;;background-color: #d8dadc;font-size: 20px;color: #000"><br>
+        <%=Msg%>
+    </form>
+</div>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>

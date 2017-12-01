@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宝贝家园后台管理系统</title>
+    <link rel="stylesheet" href="/admin-css/news.css">
+</head>
+<body>
+<!--导航-->
+<% include header.ejs%>
+
+<!--内容-->
+<main>
+    <div class="container">
+        <section>
+            <% if(news[0].length > 0){ %>
+            <% for(var i = 0;i < news[0].length;i++) { %>
+            <div class="news" >
+                <div class="news-top">
+                    <div class="newsinfo">
+                        <div class="adminPhone"><%= news[0][i].adminName %></div>
+                        <div class="newsDateTime"><%= news[0][i].newsDateTime %></div>
+                    </div>
+                    <div id="delete">
+                        <a  href="/admin/deletenews?newsId=<%=news[0][i].newsId%>"  onclick="return confirm('请确定要删除此新闻吗？')">删除</a>
+                    </div>
+                </div>
+                <!--显示动态文字内容的位置-->
+                <div class="newsContent"><%= news[0][i].newsTitle %></div>
+                <div class="newsContent"><%= news[0][i].newsContent %></div>
+                <!--显示图片的位置-->
+                <div class="newsPic">
+                    <img src="/upload/<%= news[0][i].newsPic1 %>" onerror="this.src=''">
+                </div>
+
+                <hr style="clear: both">
+            </div>
+            <% } %>
+            <% } %>
+            <div class="page">
+                <div>
+                    <!--计算总共有页pageNumber-->
+                    <%
+                    var totalPageNumber;//总共有页
+                    var totalCount = totalCount[0].TotalCount;
+                    if (totalCount % pageSize == 0) {totalPageNumber = totalCount / 5;}
+                    else {totalPageNumber = parseInt(totalCount / 5) + 1;}
+                    %>
+                    <!--*************分页***************-->
+                    总共<%= totalCount %>条, 第<%= page %>页/共<%= totalPageNumber %>页 &nbsp;&nbsp;&nbsp;
+                    <!-- 对上一页下一页做一个处理，防止越界 if  else  -->
+                    <%if(parseInt(page) > 1){%>
+                    <!--上一页-->
+                    <a href="news?page=1">首页</a>
+                    <a href="news?page=<%= page - 1 %>"> 上一页</a>
+                    <%} else {%>
+                    首页&nbsp; 上一页
+                    <%}%>
+                    <%if(parseInt(page) < totalPageNumber){%>
+                    <a href="news?page=<%= parseInt(page) + 1 %>"> 下一页</a>
+                    <a href="news?page=<%= totalPageNumber %>"> 末页</a>
+                    <%} else {%>
+                    下一页&nbsp; 末页&nbsp;
+                    <%}%>
+                </div>
+                <div>
+                    <form action="news">
+                        跳转第 <input style="width: 20px;" type="text" value="<%= page %>" name="page">页&nbsp;&nbsp; <input type="submit" value="跳转">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>

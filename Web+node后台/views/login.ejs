@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="Stylesheet" type="text/css" href="/login/css/index_login.css"/>
+    <script type="text/javascript" src="/login/js/jquery-1.5.1.min.js"></script>
+    <script src="/javascripts/jquery-3.1.0.min.js"> </script>
+    <script type="text/javascript" src="/login/js/login.js"></script>
+    <script src="/index/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body{
+            background-image: url('/login/images/bgs.jpg');
+        }
+        .photo_notice {
+            width: 490px;
+            border: 3px solid rgb(245, 225, 144);
+            background: none repeat scroll 0% 0% rgb(255, 250, 226);
+            padding: 6px 20px;
+            color: rgb(97, 97, 97);
+        }
+
+        .photo_notice .bd .txt {
+            width: 100%;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 24px;
+            color: #AA4501;
+            font-family: 幼圆;
+            margin-top: 5px;
+        }
+
+        .photo_notice .bd .bt {
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 26px;
+            color: #913c02;
+            font-family: 黑体;
+        }
+
+        .photo_notice .bd .op {
+            width: 100%;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .photo_notice button {
+            border: 1px solid #e6bb7a;
+            width: 126px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            color: #913c02;
+            background-color: #fff7d6;
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: "Microsoft Yahei";
+        }
+    </style>
+</head>
+
+<link rel="stylesheet" href="/index/css/nav.css">
+<link rel="stylesheet" href="/index/css/bootstrap-theme.css">
+<link rel="stylesheet" href="/index/css/bootstrap.min.css">
+<body>
+<header>
+<div class="navbar navbar-inverse" style="background-color: #fff;z-index: 100;">
+    <div class="navbar-header">
+        <!-- Button for smallest screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/">
+            <img src="/index/images/logo.png" alt="template"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right mainNav ">
+            <li class="c1 "><a href="/">首页</a></li>
+            <li class="c2 "><a href="/users/Dynamic">动态</a></li>
+            <li class="c3 "><a href="/users/appIntroduce">app介绍</a></li>
+            <li class="c4 "><a href="/users/Cooperation">加盟合作</a></li>
+            <li class="c5 "><a href="/users/ServiceHelp">服务帮助</a></li>
+            <li class="c6 " id="Info"></li>
+        </ul>
+    </div>
+    </div>
+    <!--/.nav-collapse -->
+</header>
+<form name="form1" action="/users/login" method="post" id="form1">
+    <div>
+        <input type="hidden"  id="userPhone"/>
+    </div>
+
+    <div>
+        <input type="hidden"  id="userPassword"/>
+    </div>
+    <span id="sppage" style="display: none"></span>
+    <div class="small_yunduo">
+    </div>
+    <div class="login_box">
+    </div>
+    <div class="login_box logining_user">
+        <input type="text" id="tbloginid" name="userPhone" class="input_style" required/><img src="/login/images/yiwen.png"
+                                                                    class="yiwen" title="用户名默认为您接收短信的手机号！"/></div>
+    <div class="login_box logining_pssword">
+        <input type="password" id="tbpassword" name="userPassword" class="input_style" required/><img src="/login/images/yiwen.png"
+                                                                         style="cursor: pointer" class="yiwen"
+                                                                         title="<a href='/users/forgetpwd'>忘记密码?</a>"
+                                                                         onclick='$(".findpassword").show("normal");'/>
+    </div>
+    <div class="login_box login_button_user" id="btnlogin">
+    </div>
+    <a href="/users/forgetPwd">
+    <div class="login_box login_button_reset">
+    </div>    </a>
+
+</form>
+<footer style="margin: 20px 0 ;position: absolute;bottom: 0;width: 100%">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 宝贝家园项目小组 粤ICP备xxxxxxxx号</p>
+</footer>
+</body>
+
+<script>
+    $('#btnlogin').click(function () {
+        var userPhone=$("#tbloginid").val();
+        var userPassword=$("#tbpassword").val();
+        if(userPhone==null||userPhone==""){
+            /*top.art.*/alert( "请输入手机号！");
+            $("#tbloginid").focus();
+        } else if(userPassword==null||userPassword==""){
+            /*top.art.*/alert( "请输入密码！");
+            $("#tbpassword").focus();
+        }else{
+            $("#form1").submit();
+        }
+    });
+</script>
+<script type="text/javascript" src="/index/js/nav.js"></script>
+</html>

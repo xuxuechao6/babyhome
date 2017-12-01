@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宝贝家园后台管理系统</title>
+    <!-- <link rel="stylesheet" href="/admin-css/users.css">-->
+    <style>
+        #admininfo {
+            width: 500px;
+            margin: 20px 200px;
+            line-height: 40px;
+        }
+
+        #admininfo div span:nth-child(1) {
+            width: 100px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<% include header.ejs %>
+<% if(admin.length > 0){ %>
+<div class="content">
+    <h2 style="margin-left: -100px">我的信息</h2>
+
+
+    <div id="admininfo">
+
+        <div>
+            <span>账号：</span>&nbsp;&nbsp;
+            <sapn><%= admin[0].adminPhone %></sapn>
+        </div>
+        <div>
+            <span>名字：</span>&nbsp;&nbsp;
+            <sapn> <%= admin[0].adminName %></sapn>
+        </div>
+        <div>
+            <span>性别：</span>&nbsp;&nbsp;
+            <sapn> 男</sapn>
+        </div>
+        <div>
+            <span>出生日期：</span>&nbsp;&nbsp;
+            <sapn> 1995-08-16</sapn>
+        </div>
+        <div>
+            <span>职务：</span>&nbsp;&nbsp;
+            <sapn> 后台数据管理员</sapn>
+        </div>
+        <div>
+            <span>个人介绍：</span>&nbsp;&nbsp;
+            <sapn>
+                <p style="width: 300px;height: 30px;margin-left: 100px;margin-top: -40px;">
+                    很懒的一个人，什么也没有留下！</p></sapn>
+        </div>
+        <div style="margin-top: 20px;"><a href="/admin/updateAdmininfo?adminPhone=<%= admin[0].adminPhone %>"
+                                          style="color: black;;background-color: #d8dadc;padding: 5px 10px">修改资料</a>
+        </div>
+    </div>
+</div>
+<% } %>
+<footer style="margin: 150px 0 30px">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Web App介绍</title>
+    <meta name="author" content="Administrator" />
+
+    <link rel="stylesheet" href="/appIntroduce/css/jquery.fullPage.css" />
+    <link rel="stylesheet" href="/appIntroduce/css/base.css" />
+    <link rel="stylesheet" href="/appIntroduce/css/welcome.css" />
+    <link rel="stylesheet" href="/appIntroduce/css/jquery.bxslider.css">
+
+    <script src="/appIntroduce/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/appIntroduce/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="/appIntroduce/js/jquery.bxslider.js"></script>
+
+    <script type="text/javascript" src="/appIntroduce/js/main.js"></script>
+
+
+    <script src="/index/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/index/js/nav.js"></script>
+    <link rel="stylesheet" href="/index/css/nav.css">
+    <link rel="stylesheet" href="/index/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/index/css/bootstrap.min.css">
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            my_section1.init();
+            $('#welcome').fullpage({
+                'verticalCentered': false,
+                'css3': true,
+                'sectionsColor': ['#6cbb52','#e89c38', '#40a3e1'],
+                'navigation': true,
+                'navigationPosition': 'right',
+                //'easing' : 'easeInOutBounce',
+                'afterRender' : function (index,anchorLink ) {
+                    $(".iphone_img").addClass('fadeInTop');
+                },
+                'afterSlideLoad':function(index ) {
+
+                }
+                ,
+                'afterLoad': function(anchorLink, index){
+                    if( index == 2) {
+                        $(".iphone_img").removeClass('fadeInTop');
+                    }
+                    if(index==3){
+                        my_section1.init();
+                    }
+                    if(index==1){
+                        my_section1.init();
+                    }
+                    if(index==2){
+                        my_section2.init();
+                    }
+
+                },
+                'onLeave': function(index, nextIndex, direction){
+                    if( nextIndex  == 1 ) {
+                        $(".iphone_img").addClass('fadeInTop');
+                    }
+                    if(index==1){
+                        my_section1.anim();
+                    }
+                    if(index==3){
+                        my_section1.anim();
+                    }
+                    if(index==2){
+                        my_section2.anim();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="welcome">
+    <div class="section" id="section0">
+        <div class="my_section">
+            <div class="my_codoon fl">
+                <div class="text1_box">
+                    <div class="text1 fl">百度一下，</div><div class="text3 fl">宝贝家园</div>
+                    <div class="blank0"></div>
+                </div>
+                <p><div class="text2">中国最有潜力的家园共育类APP</div></p>
+                <div class="download_box">
+                    <div class="left">
+                        <div class="icon erweima"></div>
+                    </div>
+                    <div class="right">
+                        <a href="" class="item pc_download item_pc" style="margin-bottom:15px;">Web App</a>
+                        <a class="item"><img src="/appIntroduce/images/now_download.png" width="160px" alt=""></a>
+                    </div>
+                    <div class="blank10"></div>
+                </div>
+            </div>
+            <div class="iphone fr">
+                <div class="iphone_icon iphone_img">
+                    <div id="iphone_slider_wrapper">
+                        <div id="iphone_slider">
+                            <ul id="iphone_slider_ul">
+                                <li><img src="/appIntroduce/images/iphone1.png"></li>
+                                <li><img src="/appIntroduce/images/iphone2.png"></li>
+                                <li><img src="/appIntroduce/images/iphone3.png"></li>
+                                <li><img src="/appIntroduce/images/iphone4.png"></li>
+                                <li><img src="/appIntroduce/images/iphone5.png"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img class="iphone_xxoo" src="/appIntroduce/images/iphone_xxoo.png">
+                </div>
+            </div>
+            <div class="blank0"></div>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <div class="my_section ">
+            <div class="rom_txt fr">
+                <h2 class="bigtit">宝贝家园</h2>
+                <p class="notes">能兼容安卓、IOS的首款家园共育类APP</p>
+                <div class="blank10"></div>
+                <ul class="clearfix">
+                    <li>发布动态</li>
+                    <li>成长记录</li>
+                    <li>校园新闻</li>
+                    <li>育儿常识</li>
+                    <li>软硬兼施</li>
+                </ul>
+            </div>
+            <div class="cod_rom fl">
+                <img src="/appIntroduce/images/rom1.png" alt="">
+                <img src="/appIntroduce/images/rom2.png" alt="">
+                <img src="/appIntroduce/images/rom3.png" alt="">
+                <img src="/appIntroduce/images/rom4.png" alt="">
+                <img src="/appIntroduce/images/rom5.png" alt="">
+                <img src="/appIntroduce/images/rom6.png" alt="">
+                <img src="/appIntroduce/images/rom7.png" alt="">
+                <img src="/appIntroduce/images/rom8.png" alt="">
+                <img src="/appIntroduce/images/rom9.png" alt="">
+                <img src="/appIntroduce/images/rom10.png" alt="">
+            </div>
+            <div class="blank0"></div>
+        </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="my_section">
+            <div class="rom_txt fl souhuan">
+                <h2 class="bigtit">宝贝家园</h2>
+                <p class="notes">掌控孩子的健康生活</p>
+                <ul class="clearfix">
+                    <li>宝宝签到</li>
+                    <li>宝贝饮食</li>
+                    <li>宝贝课程表</li>
+                    <li>班级作业</li>
+                    <li>班级活动</li>
+                    <li>宝贝在校情况清晰可见</li>
+                </ul>
+            </div>
+            <div class="shouhuanImg  fr">
+                <img src="/appIntroduce/images/shouhuan.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fixed head">
+    <div class="navbar navbar-inverse" style="background-color: white">
+        <div class="navbar-header">
+            <!-- Button for smallest screens -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="/">
+                <img src="/index/images/logo.png" alt="template"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right mainNav ">
+                <li class="c1 "><a href="/">首页</a></li>
+                <li class="c2 "><a href="/users/Dynamic">动态</a></li>
+                <li class="c3 "><a href="/users/appIntroduce">APP介绍</a></li>
+                <li class="c4 "><a href="/users/Cooperation">加盟合作</a></li>
+                <li class="c5 "><a href="/users/ServiceHelp">服务帮助</a></li>
+                <li class="c6 " id="Info"></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!-- /.navbar -->
+    <div class="line"></div>
+</div>
+
+<div class="fixed bottom">
+    <div class="bottom_content">
+        <footer style="margin: 20px 0 ">
+            <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 宝贝家园项目小组 粤ICP备xxxxxxxx号</p>
+        </footer>
+    </div>
+</div>
+</body>
+
+</html>

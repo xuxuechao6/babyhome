@@ -1,0 +1,81 @@
+
+/*news*/
+main{  width: 1000px;margin-left: 240px; }
+main .container{  width: 1000px;  margin: 0 auto;  }
+/*页面动态展示部分*/
+main .container section{  width: 96%;  float: left;  padding: 10px;  }
+/*展示全部动态部分*/
+.news{  border: 1px solid #b0b0b0;margin-bottom: 10px;  background-color: #ffffff;  }
+.news-top{  width: 100%;  height: 100px;  }
+.newsinfo{  float: left  }
+.adminPhone {  width: 300px;  height: 20px;  font: 600 20px/35px "微软雅黑" ;  margin-top: 15px;  margin-left: 20px;   }
+.newsDateTime {  width: 300px;  height: 20px;  font: 400 16px/20px "微软雅黑" ;  margin-top: 15px;  margin-left: 20px;  }
+#delete{float: right;color:black;height: 50px;line-height: 50px;margin-right:10px  }
+#delete a{;color:black;line-height: 50px;  }
+.newsContent {  width:98%; font: 400 16px/20px "微软雅黑" ;  margin: 10px;  text-indent: 2em;   }
+main .container section div .newsPic {  width: 98%; margin: 10px;  }
+main .container section div .newsPic img{  width: 200px;  height: 180px;margin: 5px;  float: left;  }
+/*====================分页=================*/
+
+.page div:nth-child(1){float: left;margin-left: 100px;}
+.page div:nth-child(2){float: left;width: 400px;}
+.page div:nth-child(2) form{margin-top: -1px;}
+footer{clear: both;  width: 100%;  height: 30px;  padding-top: 20px;  }
+footer .container{  width: 960px;  margin: 0 auto;  text-align: center;  }
+
+/*newspublish*/
+
+form{  margin:2%;  width: 96%;  text-align: center;
+    font-size:16px;  color:black;  border-width: 1px;  border-color: red;  border-collapse: collapse;
+}
+.basic-grey {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 600px;
+    background: #F7F7F7;
+    padding: 25px 15px 25px 10px;
+    font: 16px Georgia, "Times New Roman", Times, serif;
+}
+.basic-grey label {  display: block;  margin: 0px;  }
+.basic-grey label span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+
+}
+.basic-grey input[type="text"], .basic-grey input[type="file"], .basic-grey textarea {
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.basic-grey textarea{
+    padding: 5px 3px 3px 5px;
+}
+
+.basic-grey button {
+    background: blue;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: black;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: -360px;
+}
+.basic-grey button:hover {
+    background:  darkblue;
+}
+#spanMessage{margin-left: -170px;margin-top: 10px;}

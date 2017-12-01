@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/admin-css/users.css">
+</head>
+<body>
+<% include header.ejs%>
+<div class="userinfo-table" >
+    <h2>修改用户信息</h2>
+    <form action="/admin/updateAdmin" method="post" class="basic-grey">
+        <label>  <span>账号:</span><input type="text" required id="adminPhone" name="adminPhone" value="<%= admin[0].adminPhone %>"></label><br>
+        <label>  <span> 密码:</span><input type="password" required id="adminPassword" name="adminPassword" value="<%= admin[0].adminPassword %>"></label><br>
+        <label>  <span> 姓名:</span><input type="text" required id="adminName" name="adminName" value="<%= admin[0].adminName %>"></label><br>
+
+        <input type="submit" value="确认" style="width: 50px;background: #d8dadc;">
+        <input type="reset" value="重置"style="width: 50px;background: #d8dadc;" >
+    </form>
+</div>
+<footer style="margin: 100px 0 30px ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>

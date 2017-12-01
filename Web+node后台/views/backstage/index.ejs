@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/admin-js/chart/morris-0.4.3.min.css" rel="stylesheet" />
+
+    <style>
+        #page-wrapper{
+            margin: 50px 0 0 50px;
+            padding: 15px 30px;
+        }
+    </style>
+</head>
+<body>
+<% include header.ejs%>
+<div class="content">
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="margin-left: 300px;font-weight: bold">
+                       2016年近7个月月活跃用户表
+                    </div>
+                    <div class="panel-body">
+                        <div id="morris-bar-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+<!-- Metis Menu Js -->
+<script src="/admin-js/chart/jquery.metisMenu.js"></script>
+<!-- Morris Chart Js -->
+<script src="/admin-js/chart/raphael-2.1.0.min.js"></script>
+<script src="/admin-js/chart/morris.js"></script>
+<!-- Custom Js -->
+<script src="/admin-js/chart/custom-scripts.js"></script>
+
+</body>
+</html>

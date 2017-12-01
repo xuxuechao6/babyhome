@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/admin-css/header.css">
+<div class="top">
+    <div class="admin_logo"><h2>宝贝家园后台管理系统</h2></div>
+    <div class="head-l">
+        <a class="button button-little bg-green" href="/" target="_blank"><span class="icon-home"></span> 前台首页</a>
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <a class="button button-little bg-red" href="/admin/logout"><span class="icon-power-off"></span> 退出登录</a>
+    </div>
+
+</div>
+<div  class="sidebar-nav">
+        <ul id="nav">
+            <li class="clickable">
+                <a href="/admin/admininfo" class="nav-header">欢迎您 管理员: <span id="adminInfo"></span> </a>
+            </li>
+            <li>
+                <a> 用户管理</a>
+                <ul>
+                    <li><a href="/admin/usersregister" class="nav-header" >用户注册</a></li>
+                    <li><a href="/admin/userinfo" class="nav-header">用户信息</a></li>
+                    <li><a href="/admin/dynamic" class="nav-header ">用户动态 </a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a >新闻管理</a>
+                <ul>
+                    <li><a href="/admin/newspublish" class="nav-header" >发布新闻动态</a></li>
+                    <li><a href="/admin/news" class="nav-header ">新闻动态 </a></li>
+                </ul>
+            </li>
+            <li>
+                <a > 育儿常识管理</a>
+                <ul>
+                    <li><a href="/admin/commonpublish" class="nav-header" >发布育儿常识</a></li>
+                    <li><a href="/admin/common" class="nav-header" >育儿常识</a></li>
+                </ul>
+            </li>
+        </ul>
+</div>
+<!--提醒信息-->
+<!--session-->
+<script src="/admin-js/jquery-3.1.0.min.js"></script>
+<script src="/admin-js/header.js"></script>
+<script src="/admin-js/jquery.ssd-vertical-navigation.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.get("/admin/Session",function(data,status){
+            console.log("数据: " + data + "\n状态: " + status);
+            $("#adminInfo").html(data);
+        });
+    });
+</script>

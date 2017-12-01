@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>用户信息</h2>
+显示所有用户信息
+<form action="/admin/update" method="post">
+    <label>  手机号码:<input type="text" required id="userPhone" name="userPhone" value="<%= users[0].userPhone %>"></label><br>
+    <label>  账号类型:<input type="text" required id="userType" name="userType" value="<%= users[0].userType %>"></label><br>
+    <label>  姓名:<input type="text" required id="userNickName" name="userNickName" value="<%= users[0].userNickName %>"></label><br>
+    <label>  密码:<input type="password" required id="userPassword" name="userPassword" value="<%= users[0].userPassword %>"></label><br>
+    <label>  性别:<input type="text" required id="userSex" name="userSex" value="<%= users[0].userSex %>"></label><br>
+    <label>  出生日期:<input type="date" required id="userDate" name="userDate" value="<%= users[0].userDate %>"></label><br>
+    <input type="submit" value="确认">
+    <input type="reset" value="重置">
+</form>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>

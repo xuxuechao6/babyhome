@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>忘记密码</title>
+</head>
+<script src="/forgetPwd/jquery-3.1.0.min.js"></script>
+<script src="/forgetPwd/jquery.idcode.js"></script>
+<script src="/forgetPwd/forgetpwd.js"></script>
+<link rel="stylesheet" href="/forgetPwd/forgetpwd.css">
+
+<script src="/index/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/index/css/nav.css">
+<link rel="stylesheet" href="/index/css/bootstrap-theme.css">
+<link rel="stylesheet" href="/index/css/bootstrap.min.css">
+<script type="text/javascript" src="/index/js/nav.js"></script>
+
+<script>
+    function check_num() {
+        var num=document.getElementById("userPhone");
+        if(num.value.length!=11){
+            document.getElementById("num").style.outline="solid 1px red";
+            document.getElementById("text1").innerHTML="请输入正确的手机号";
+            document.getElementById("text1").style.color="red";
+        }
+        else
+        {var isRight=true;
+            if (isRight == true) {
+                document.getElementById("text1").innerHTML = "可用!";
+                document.getElementById("text1").style.color = "green";
+            }
+        }
+    }
+    $.idcode.setCode();   //加载生成验证码方法
+</script>
+<body>
+<div class="navbar navbar-inverse" style="background-color: #fff;z-index: 100;">
+    <div class="navbar-header">
+        <!-- Button for smallest screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/">
+            <img src="/index/images/logo.png" alt="template"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right mainNav ">
+            <li class="c1 "><a href="/">首页</a></li>
+            <li class="c2 "><a href="/users/Dynamic">动态</a></li>
+            <li class="c3 "><a href="/users/appIntroduce">app介绍</a></li>
+            <li class="c4 "><a href="/users/Cooperation">加盟合作</a></li>
+            <li class="c5 "><a href="/users/ServiceHelp">服务帮助</a></li>
+            <li class="c6 " id="Info"></li>
+        </ul>
+    </div>
+</div>
+<!--/.nav-collapse -->
+  <div class="content">
+   <div class="web-width">
+     <div class="for-liucheng">
+      <div class="liulist for-cur"></div>
+      <div class="liulist"></div>
+      <div class="liulist"></div>
+      <div class="liulist"></div>
+      <div class="liutextbox">
+       <div class="liutext for-cur"><em>1</em><br /><strong>填写手机名</strong></div>
+       <div class="liutext"><em>2</em><br /><strong>验证身份</strong></div>
+       <div class="liutext"><em>3</em><br /><strong>设置新密码</strong></div>
+       <div class="liutext"><em>4</em><br /><strong>完成</strong></div>
+      </div>
+     </div>
+        <form action="/users/forgetPwd1" method="post" class="forget-pwd">
+       <dl>
+        <dt>手机号码：</dt>
+        <dd><input type="text"name="userPhone" id="userPhone"required placeholder="请输入密码手机号"/></dd>
+           <span id="text1"><%=Msg%></span>
+        <div class="clears"></div>
+       </dl> 
+       <dl>
+        <dt>验证码：</dt>
+        <dd>
+            <input type="text" id ="Txtidcode" class ="txtVerification"><span id="idcode"></span>
+            <span id="text"></span>
+        </dd>
+        <div class="clears"></div>
+       </dl>
+       <div class="subtijiao">
+           <input type="submit"id="butn"value="提交" />
+       </div>
+      </form>
+   </div>
+  </div>
+
+  <footer style="margin: 20px 0 ">
+      <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 宝贝家园项目小组 粤ICP备xxxxxxxx号</p>
+  </footer>
+</body>
+
+</html>

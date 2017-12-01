@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BabyHome后台用户注册</title>
+    <link rel="stylesheet" href="/admin-css/usersregister.css">
+</head>
+<body>
+<% include header.ejs%>
+<div class="content">
+    <h2>用户注册</h2>
+    <div >
+        <form class="basic-grey" id="frmUploadFile" action='javascript:;' role="form" method="post">
+            <label>
+                <span>手机号</span>
+                <input name="userPhone" type="text" id="userPhone" placeholder="输入手机号码" autocomplete="off"  required>
+            </label>
+            <label>
+                <span>密码</span>
+                <input name="userPassword" type="password" id="userPassword" placeholder="输入密码"  required/>
+            </label>
+            <label>
+                <span>姓名</span>
+                <input name="userNickName" type="text" id="userNickName" placeholder="请填写姓名"  required />
+            </label>
+            <label>
+                <span>性别 </span>
+                <select name="userSex" id="userSex">
+                    <option value="男" checked >男</option>
+                    <option value="女" >女</option>
+                </select>
+            </label>
+            <label>
+                <span>用户类型 </span>
+                <select name="userType" id="userType" >
+                    <option value="家长" checked >家长</option>
+                    <option value="老师" >老师</option>
+                </select>
+            </label>
+            <label>
+                <span>出生日期</span>
+                <input name="userDate" type="text" id="userDate" value="2012-12-12"   required/>
+            </label>
+            <label>
+                <span>班级信息</span>
+                <input name="classId" type="text"  required/>
+            </label>
+            <label>
+                <span>上传头像 :</span>
+                <input type="file" name="files" id="myFile"  />
+
+                <label  id="fileSize" style="margin-left: -55px;margin-bottom: 10px;"></label>
+            </label>
+            <label>
+                <span>&nbsp;</span>
+                <button onClick="uploadFile()" style="margin-left: -100px;background-color: #d8dadc;font-size: 20px;color: #000">注册</button>
+                <div  id="spanMessage" style="margin-left: 36px;"></div>
+            </label>
+        </form>
+    </div>
+
+</div>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+<script src="/admin-js/usersregisterPIC.js"></script>
+</body>
+</html>

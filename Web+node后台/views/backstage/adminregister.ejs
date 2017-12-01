@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>后台管理员注册</title>
+    <meta name="author" content="DeathGhost" />
+    <link rel="stylesheet" href="/admin-css/adminlogiin&register.css">
+</head>
+<body>
+<div class="login-container">
+    <H1>BabyHome管理员注册</H1>
+    <div class="connect">
+        <p>欢迎来到宝贝家园后台管理系统</p>
+    </div>
+    <form action="adminregisterJudge" method="post" id="registerForm">
+        <div>
+            <input type="text" name="adminPhone" required="请输入手机号码" class="phone" placeholder="输入手机号码" autocomplete="off" id="adminPhone"/>
+        </div>
+
+        <div>
+            <input type="password" name="adminPassword" class="adminPassword" placeholder="输入密码" oncontextmenu="return false" onpaste="return false" />
+        </div>
+        <div>
+            <input type="password" name="readminPassword" class="readminPassword" placeholder="再次输入密码" oncontextmenu="return false" onpaste="return false" />
+        </div>
+        <div>
+            <input type="text" name="adminName" class="adminName" placeholder="请输入姓名" oncontextmenu="return false" onpaste="return false" />
+        </div>
+        <button id="submit" type="submit">注 册</button>
+        <label id="text1" class="error"><%=Msg%></label>
+    </form>
+    <a href="/admin">
+        <button type="button" class="register-tis">已经有账号？</button>
+    </a>
+</div>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+<script src="/admin-js/jquery.min.js"></script>
+<!--表单验证-->
+<script src="/admin-js/common.js"></script>
+<!--&lt;!&ndash;背景图片自动更换&ndash;&gt;-->
+<script src="/admin-js/supersized.3.2.7.min.js"></script>
+<script src="/admin-js/supersized-init.js"></script>
+<script src="/admin-js/jquery.validate.min.js?var1.14.0"></script>
+</body>
+</html>

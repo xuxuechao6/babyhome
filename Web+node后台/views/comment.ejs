@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>评论</title>
+    <link rel="stylesheet" href="/dynamic/base.css">
+    <link rel="stylesheet" href="/comment/comment.css">
+    <script src="/javascripts/jquery-3.1.0.min.js"></script>
+
+
+    <script src="/index/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/index/css/nav.css">
+    <link rel="stylesheet" href="/index/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/index/css/bootstrap.min.css">
+</head>
+<body>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+        codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="100%"
+        height="760" align="middle">
+    <param name="movie" value="index.swf"/>
+    <param name="quality" value="high"/>
+    <param name="menu" value="false"/>
+    <param name="bgcolor" value="#ffffff"/>
+    <embed src="/stylesheets/index.swf" quality="high" menu="false" bgcolor="#ffffff" width="100%" height="760"
+           align="middle" type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"/>
+</object>
+
+
+<div class="navbar navbar-inverse" style="background-color: white">
+    <div class="navbar-header">
+        <!-- Button for smallest screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/">
+            <img src="/index/images/logo.png" alt="template"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right mainNav ">
+            <li class="c1 "><a href="/">首页</a></li>
+            <li class="c2 "><a href="/users/Dynamic">动态</a></li>
+            <li class="c3 "><a href="/users/appIntroduce">app介绍</a></li>
+            <li class="c4 "><a href="/users/Cooperation">加盟合作</a></li>
+            <li class="c5 "><a href="/users/ServiceHelp">服务帮助</a></li>
+            <li class="c6 " id="Info"></li>
+            <li class="c2 "><a href="/users/Dynamic">返回</a></li>
+        </ul>
+    </div>
+    <!--/.nav-collapse -->
+</div>
+<!-- /.navbar -->
+
+<section>
+    <div class="dynamic">
+        <div class="dynamic-top">
+            <div class="userPics">
+                <!--头像位置-->
+                <img src="/upload/<%= thisDynamic[0].userPic %>" onerror="this.src='/images/1.png'">
+            </div>
+            <div class="users">
+                <!--昵称位置-->
+                <b class="userNickName">
+                    <%= thisDynamic[0].userNickName %>
+                </b>
+                <!--显示时间的位置-->
+                <b class="dynamicDateTime">
+                    <%= thisDynamic[0].dynamicDateTime %>
+                </b>
+            </div>
+        </div>
+        <!--显示动态文字内容的位置-->
+        <div class="dynamicContent"><%= thisDynamic[0].dynamicContent %>
+        </div>
+
+        <!--显示图片的位置-->
+        <div class="dynamicPic">
+            <% if(thisDynamic[0].dynamicPics != null){ %>
+            <% var arr = thisDynamic[0].dynamicPics.split(",") %>
+            <% for(var t = 0;t < arr.length;t++){ %>
+            <% if(arr[t].length == 40) { %>
+            <img src='/upload/<%= arr[t] %>' onerror='this.src=""' alt="">
+            <% } %>
+            <% } %>
+
+            <% } %>
+        </div>
+        <div class="dynamic-bottom">
+                <img class="like" src="/comment/点赞<%= praiseImg %>.png" ondragstart="return false"/>
+            <div id="praiseNum">
+                <%= praiseNum %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<header>
+    <div id="header">
+        <form method='post' action='/users/comment' role="form">
+            <input style="display: none" type="text" id="dynamicId" name="dynamicId" value="<%= _dynamicId %>"class="<%= _dynamicId %>">
+            <textArea id="xx" name="xx" class="text">我也说一句~~~</textArea><br/><br/>
+            <input id="submit1" class="submit1" type="submit" value="发布评论"/>
+        </form>
+    </div>
+</header>
+<main>
+    <div class="card-container-2">
+        <div class="card-holder">
+            <div class="card">
+                <p>全部评论</p>
+            </div>
+            <div class="card">
+                <h1></h1>
+            </div>
+            <div class="card">
+                <h1></h1>
+            </div>
+        </div>
+    </div>
+    <% if(comments.length > 0){ %>
+    <section>
+        <% for(var i = 0;i < comments.length;i++) { %>
+        <div class="content1">
+            <div>
+                <img src="/upload/<%= comments[i].userPic %>" onerror="this.src='/images/1.png'">
+            </div>
+            <div>
+                <p> <%= comments[i].userNickName %></p>
+                <p> <%= comments[i].commentTime %></p>
+            </div>
+            <div><font>评论你：</font> <%= comments[i].commentContent %></div>
+            <div><input id="submit2" class="submit1" type="submit" value="回  复"/></div>
+        </div>
+        <% } %>
+    </section>
+    <% } %>
+</main>
+
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 宝贝家园项目小组 粤ICP备xxxxxxxx号</p>
+</footer>
+</body>
+<script>
+    $(function () {
+        $(".like").click(function () {
+            var dynamicId=$("#dynamicId").val()
+            console.log(dynamicId)
+            var a = parseInt($("#praiseNum").html());
+            console.log(a)
+            $.ajax({
+                type: "post",
+                url: "praise",
+                data: {dynamicId: dynamicId},
+                dataType: "text",
+                success: praise
+            });
+            function praise(flag) {
+                console.log(flag)
+                if(flag=='false'){
+                    $(".like").attr("src","/comment/点赞off.png")
+                    $("#praiseNum").html(a - 1);
+                    console.log($("#praiseNum").html())
+                }
+                else {
+                    $(".like").attr("src","/comment/点赞on.png")
+                    $("#praiseNum").html(a + 1);
+                    console.log($("#praiseNum").html())
+                }
+            }
+        })
+    })
+</script>
+<script type="text/javascript" src="/index/js/nav.js"></script>
+</html>

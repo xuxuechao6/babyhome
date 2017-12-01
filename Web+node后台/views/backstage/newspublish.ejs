@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/admin-css/news.css">
+</head>
+<body>
+<% include header.ejs%>
+<div class="content" >
+    <h2>发布新闻资讯</h2>
+    <div>
+    <form   class="basic-grey"  id="frmUploadFile" action='javascript:;'role="form" method="post">
+        <label>
+            <span>新闻标题 :</span>
+            <input id="name" type="text" name="newsTitle" placeholder="Your Full Name" required />
+        </label>
+        <label>
+            <span>新闻内容 :</span>
+            <textarea id="message" name="newsContent" placeholder="Your Message to Us" required></textarea>
+        </label>
+        <label>
+            <span>选择图片 :</span>
+            <input type="file" name="files" id="myFile"  />
+            <label  id="fileSize" style="margin-left: -55px;margin-bottom: 10px;"></label>
+        </label>
+        <label>
+            <span>&nbsp;</span>
+            <button onClick="uploadFile()" style="background-color: #d8dadc;font-size: 20px;color: #000">上传</button>
+            <div  id="spanMessage"></div>
+        </label>
+
+    </form>
+</div>
+</div>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>
+<script src="/admin-js/newsPIC.js"></script>

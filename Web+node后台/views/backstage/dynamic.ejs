@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宝贝家园后台管理系统</title>
+<style>
+    main{  width: 1000px;margin-left: 240px; }
+    main .container{  width: 1000px;  margin: 0 auto;  }
+    /*页面动态展示部分*/
+    main .container section{  width: 96%;  float: left;  padding: 10px;  }
+    /*展示全部动态部分*/
+    main .container section .dynamic{  border: 1px solid #b0b0b0;margin-bottom: 10px;  background-color: #ffffff;  }
+    main .container section div .dynamic-top{  width: 100%;  height: 100px;  }
+    main .container section div .dynamic-top .userPics{  width: 70px;  height: 100px;  margin-left: 10px;  float: left;  }
+    main .container section div .dynamic-top .userPics img{  width: 70px;  height: 70px;  margin-top: 15px;  border-radius: 35px;  }
+    main .container section div .dynamic-top .users{  width: 100px;  height: 100px;  float: left;  }
+    main .container section div .dynamic-top .userNickName {  width: 200px;  height: 30px;  font: 600 20px/35px "微软雅黑" ;  margin-top: 15px;  margin-left: 20px;  float: left;  }
+    main .container section div .dynamic-top .dynamicDateTime {  width: 200px;  height: 20px;  font: 400 16px/20px "微软雅黑" ;  margin-top: 15px;  margin-left: 20px;  float: left;  }
+    #delete{float: right;color:black;height: 50px;line-height: 50px;margin-right:10px  }
+    #delete a{;color:black;line-height: 50px;  }
+    main .container section div .dynamicContent {  width:98%; font: 400 16px/20px "微软雅黑" ;  margin: 10px;  text-indent: 2em;  }
+    main .container section div .dynamicPic {  width: 98%; margin: 10px;  }
+    main .container section div .dynamicPic img{  width: 200px;  height: 180px;margin: 5px;  float: left;  }
+    /*====================分页=================*/
+    main .container section .page{  width: 650px;  margin: 50px 0;  }
+    main .container section .page div{  float: left;  margin-left: 50px;  }
+    footer{clear: both;  width: 100%;  height: 30px;  padding-top: 20px;  }
+    footer .container{  width: 960px;  margin: 0 auto;  text-align: center;  }
+
+</style>
+</head>
+<body>
+<!--导航-->
+<% include header.ejs%>
+
+<!--结束-->
+
+<main>
+    <div class="container">
+        <section>
+            <% if(users[0].length > 0){ %>
+            <% for(var i = 0;i < users[0].length;i++) { %>
+            <div class="dynamic">
+                <div class="dynamic-top">
+                    <div class="userPics"><!--头像位置-->
+                        <img src="/upload/<%= users[0][i].userPic %>" onerror="this.src='/images/1.png'">
+                    </div>
+                    <div class="users">
+                        <!--昵称位置-->
+                        <b class="userNickName"><%= users[0][i].userNickName %></b>
+                        <!--显示时间的位置-->
+                        <b class="dynamicDateTime"><%= users[0][i].dynamicDateTime %></b>
+                    </div>
+                    <div id="delete">
+                        <a  href="/admin/deleteuserdynamic?dynamicId=<%=users[0][i].dynamicId%>"  onclick="return confirm('请确定要删除此动态吗？')">删除</a>
+                    </div>
+                </div>
+                <!--显示动态文字内容的位置-->
+                <div class="dynamicContent"><%= users[0][i].dynamicContent %></div>
+                <!--显示图片的位置-->
+                <div class="dynamicPic">
+                    <% if(users[0][i].dynamicPics != null){ %>
+                    <% var arr = users[0][i].dynamicPics.split(",") %>
+                    <% for(var t = 0;t < arr.length;t++){ %>
+                    <% if(arr[t].length == 40) { %>
+                    <img src='/upload/<%= arr[t] %>' onerror='this.src=""' alt="">
+                    <% } %>
+                    <% } %>
+                    <% } %>
+                </div>
+                <hr style="clear: both">
+            </div>
+            <% } %>
+            <% } %>
+            <div class="page">
+                <div>
+                    <!--计算总共有页pageNumber-->
+                    <%
+                    var totalPageNumber;//总共有页
+                    var totalCount = totalCount[0].TotalCount;
+                    if (totalCount % pageSize == 0) {totalPageNumber = totalCount / 5;}
+                    else {totalPageNumber = parseInt(totalCount / 5) + 1;}
+                    %>
+                    <!--*************分页***************-->
+                    总共<%= totalCount %>条, 第<%= page %>页/共<%= totalPageNumber %>页 &nbsp;&nbsp;&nbsp;
+                    <!-- 对上一页下一页做一个处理，防止越界 if  else  -->
+                    <%if(parseInt(page) > 1){%>
+                    <!--上一页-->
+                    <a href="Dynamic?page=1">首页</a>
+                    <a href="Dynamic?page=<%= page - 1 %>"> 上一页</a>
+                    <%} else {%>
+                    首页&nbsp; 上一页
+                    <%}%>
+                    <%if(parseInt(page) < totalPageNumber){%>
+                    <a href="Dynamic?page=<%= parseInt(page) + 1 %>"> 下一页</a>
+                    <a href="Dynamic?page=<%= totalPageNumber %>"> 末页</a>
+                    <%} else {%>
+                    下一页&nbsp; 末页&nbsp;
+                    <%}%>
+                </div>
+                <div>
+                    <form action="Dynamic">
+                        跳转第 <input style="width: 20px;height: 25px" type="text" value="<%= page %>" name="page">页 <input type="submit" text="跳转">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>

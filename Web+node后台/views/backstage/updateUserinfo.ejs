@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/admin-css/users.css">
+</head>
+<body>
+<% include header.ejs%>
+<div class="userinfo-table" >
+    <h2>修改用户信息</h2>
+    <form action="/admin/updateUser" method="post" class="basic-grey">
+        <label>  <span>账号:</span><input type="text" required id="userPhone" name="userPhone" value="<%= users[0].userPhone %>"></label><br>
+        <label>  <span> 密码:</span><input type="password" required id="userPassword" name="userPassword" value="<%= users[0].userPassword %>"></label><br>
+        <label>  <span> 姓名:</span><input type="text" required id="userNickName" name="userNickName" value="<%= users[0].userNickName %>"></label><br>
+        <label>  <span> 性别:</span><input type="text" required id="userSex" name="userSex" value="<%= users[0].userSex %>"></label><br>
+        <label>  <span> 账号类型:</span><input type="text" required id="userType" name="userType" value="<%= users[0].userType %>"></label><br>
+        <label>  <span> 出生日期:</span><input type="date" required id="userDate" name="userDate" value="<%= users[0].userDate %>"></label><br>
+        <input type="submit" value="确认" style="width: 50px;">
+        <input type="reset" value="重置"style="width: 50px;" >
+    </form>
+</div>
+<footer style="margin: 20px 0 ">
+    <p style="text-align: center;color: #000;font-size: 12px">Copyright © 2016 高博H04班第十小组 粤ICP备13070746号</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,301 @@
+
+object {
+    position: fixed;
+    z-index: -1;
+}
+/*
+*显示动态部分
+*/
+section {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+
+}
+section .dynamic{
+    margin-left: 20%;
+    width: 60%;
+    border: 1px solid #b0b0b0;
+}
+section .dynamic .dynamic-top{
+    width: 100%;
+    height: 100px;
+}
+section .dynamic .dynamic-top .userPics{
+    width: 70px;
+    height: 100px;
+    margin-left: 10px;
+    float: left;
+}
+section .dynamic  .dynamic-top .userPics img{
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    border-radius: 35px;
+}
+section .dynamic  .dynamic-top .users{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+section .dynamic  .dynamic-top .userNickName {
+    width: 200px;
+    height: 30px;
+    font: 600 20px/35px "微软雅黑" ;
+    margin-top: 15px;
+    margin-left: 20px;
+    float: left;
+}
+section .dynamic  .dynamic-top .dynamicDateTime {
+    width: 200px;
+    height: 20px;
+    font: 400 16px/20px "微软雅黑" ;
+    margin-top: 15px;
+    margin-left: 20px;
+    float: left;
+}
+section .dynamic  .dynamicContent {
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 10px;
+    font: 400 16px/20px "微软雅黑" ;
+    text-indent: 2em;
+}
+section .dynamic  .dynamicPic {
+    width: 90%;
+    margin-left: 5%;
+}
+section .dynamic  .dynamicPic img{
+    width: 31%;
+    margin-left:1%;
+    margin-top: 1%;
+}
+/*动态下边部分*/
+
+section .dynamic-bottom {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #b0b0b0;
+    background-color: #fafafa;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    clear: both;
+}
+section .dynamic-bottom .like{
+    width: 25px;
+    cursor:pointer;
+}
+section .dynamic-bottom #praiseNum{
+    margin-top: 10px;
+    width: 30px;
+    display: inline-block;
+    font-size: 20px;
+    text-indent: 5px;
+}
+
+section  .dynamic-bottom .comment2{
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    background: url("../img/comment.png");
+    float: right;
+    color: #000000;
+}
+/*评论框部分*/
+header {
+    width: 100%;
+    height: 150px;
+
+}
+
+header div {
+    width: 60%;
+    margin-left: 20%;
+
+}
+
+header .text {
+    width: 100%;
+    height: 80px;
+    text-indent: 20px;
+}
+
+header .submit1 {
+    position: relative;
+    left: 100%;
+    margin-left: -80px;
+    margin-top: -30px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #5cc0de;
+    border: hidden;
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (max-width: 620px) {
+    header div {
+        width: 90%;
+        margin-left: 5%;
+    }
+    section .dynamic{
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+@media only screen and (max-width: 360px) {
+    header div {
+        width: 300px;
+    }
+    section .dynamic{
+        width: 300px;
+    }
+}
+
+/*评论的内容部分*/
+main {
+    width: 100%;
+    margin-top: -20px;
+}
+
+/*评论的头部*/
+.card-container-2 {
+    cursor: pointer;
+    color: #ff0202;
+}
+
+div[class*='card-container-'] {
+    position: relative;
+    margin: 40px auto;
+    width: 150px;
+    height: 50px;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+}
+
+.card p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+}
+
+.card-container-2 .card {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    border-radius: 3px;
+    background-color: #fcfff0;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 90;
+    opacity: 0.9;
+}
+
+.card-container-2 .card:first-of-type {
+    z-index: 100;
+    opacity: 1;
+}
+
+.card-container-2 .card:nth-of-type(n+2) {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.card-container-2:hover .card:first-of-type {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+.card-container-2:hover .card:nth-last-of-type(2) {
+    -webkit-transform: scale(0.8) rotate(-5deg) translateY(-20px);
+    transform: scale(0.8) rotate(-5deg) translateY(-20px);
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+}
+
+.card-container-2:hover .card:last-of-type {
+    -webkit-transform: scale(0.8) rotate(5deg) translateY(-20px);
+    transform: scale(0.8) rotate(5deg) translateY(-20px);
+    -webkit-transform-origin: bottom right;
+    transform-origin: bottom right;
+}
+/* 评论内容的样式*/
+main section {
+    margin-left: 20%;
+    width: 60%;
+    border: 1px solid lightgrey;
+    height: auto;
+    padding: 0 20px 20px 20px;
+}
+main section .content1{
+    border-bottom: 1px dotted lightgrey;
+    padding-top: 20px;
+}
+
+main section .content1 img {
+    width: 50px;
+}
+main section .content1 font {
+    color: #ffa602;
+}
+main section .content1 div:nth-of-type(1) {
+    float: left;
+    margin-left: 30px;
+   }
+main section .content1 div:nth-of-type(2) {
+    float: left;
+    width: auto;
+    height: 50px;
+    margin-left: 20px;
+   }
+main section .content1 div:nth-of-type(3) {
+    width: 100%;
+    padding: 20px 50px 0 50px;
+    clear: both;
+}
+main section .content1 div:nth-of-type(4) {
+    width: 80px;
+    height: 30px;
+    margin-left: 80%;
+    margin-bottom: 20px;
+}
+main section .content1 input{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #5cc0de;
+    border: hidden;
+    cursor: pointer;
+    color: white;
+}
+
+
+@media only screen and (max-width: 600px) {
+    main section {
+        margin:0 auto;
+        width: 400px;
+    }
+}
+@media only screen and (max-width: 470px) {
+    main section {
+        margin:0 auto;
+        width: 300px;
+    }
+    main section .content1 div:nth-of-type(1) {
+        margin-left: 10px;
+    }
+    main section .content1 div:nth-of-type(2) {
+        margin-left: 10px;
+    }
+    main section .content1 div:nth-of-type(3) {
+        width: 100%;
+        padding: 20px;
+        clear: both;
+    }
+}
